@@ -4,8 +4,7 @@ import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
 
-fun main(args: Array<String>) {
-
+fun main() {
     throttleFirst()
     throttleLast()
 
@@ -19,7 +18,7 @@ private fun throttleLast() {
         println(it)
     }
 
-    o.buffer(280L,  TimeUnit.MILLISECONDS).subscribe {
+    o.buffer(280L, TimeUnit.MILLISECONDS).subscribe {
         println(it)
     }
 
@@ -33,7 +32,7 @@ private fun throttleFirst() {
         println(it)
     }
 
-    o.buffer(280L,  TimeUnit.MILLISECONDS).subscribe {
+    o.buffer(280L, TimeUnit.MILLISECONDS).subscribe {
         println(it)
     }
 

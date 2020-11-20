@@ -2,11 +2,8 @@ package chapter7
 
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
-import io.reactivex.subjects.Subject
 
-fun main(args: Array<String>) {
-
-
+fun main() {
     cold()
     hotSource()
 }

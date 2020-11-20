@@ -2,14 +2,10 @@ package chapter7
 
 import io.reactivex.Observable
 import io.reactivex.subjects.BehaviorSubject
-import io.reactivex.subjects.PublishSubject
-import io.reactivex.subjects.ReplaySubject
-import java.util.concurrent.TimeUnit
 import kotlin.concurrent.thread
 
 
-fun main(args: Array<String>) {
-
+fun main() {
     publish()
     replay()
 }
@@ -17,9 +13,9 @@ fun main(args: Array<String>) {
 private fun replay() {
     val list = (8..23).toList() // Some non trivial numbers
     val iterator = list.iterator()
-   /* val o = Observable.intervalRange(0, list.size.toLong(), 0, 10, TimeUnit.MILLISECONDS).map {
-        iterator.next()
-    }.publish()*/
+    /* val o = Observable.intervalRange(0, list.size.toLong(), 0, 10, TimeUnit.MILLISECONDS).map {
+         iterator.next()
+     }.publish()*/
     val o = Observable.generate<Int> { 1 }.publish()
 
     val subject = BehaviorSubject.create<Int>()
@@ -51,4 +47,4 @@ private fun replay() {
 }
 
 fun publish() {
-   }
+}
