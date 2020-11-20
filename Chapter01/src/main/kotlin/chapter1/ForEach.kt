@@ -1,5 +1,4 @@
-package me.soshin
-
+package chapter1
 
 fun main() {
     val word = "Word"
