@@ -11,6 +11,6 @@ fun main() {
 class Person {
     var name : String = ""
         set(value) {
-            this.name = value.toUpperCase()
+            field = value.toUpperCase()
         }
 }
