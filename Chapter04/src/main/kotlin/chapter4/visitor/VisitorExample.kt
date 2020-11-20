@@ -1,19 +1,18 @@
 package chapter4.visitor
 
 
-
-fun main(args: Array<String>) {
+fun main() {
 
     val page = Page(Container(Image(),
-                        Link(),
-                        Image()),
-                Table(),
-                Link(),
-                Container(Table(),
-                        Link()),
-                Container(Image(),
-                        Container(Image(),
-                                Link())))
+            Link(),
+            Image()),
+            Table(),
+            Link(),
+            Container(Table(),
+                    Link()),
+            Container(Image(),
+                    Container(Image(),
+                            Link())))
 
     println(collectLinks(page))
 }
@@ -31,7 +30,7 @@ class LinksCrawler {
     private var _links = mutableListOf<String>()
 
     val links
-        get()= _links.toList()
+        get() = _links.toList()
 
     fun visit(page: Page) {
         visit(page.elements)
@@ -45,7 +44,8 @@ class LinksCrawler {
                 is Container -> e.accept(this)
                 is Link -> _links.add(e.href)
                 is Image -> _links.add(e.src)
-                else -> {}
+                else -> {
+                }
             }
         }
     }
@@ -59,7 +59,6 @@ private fun Container.accept(feature: LinksCrawler) {
 private fun Page.accept(feature: LinksCrawler) = feature.visit(this)
 
 
-
 class Page(val elements: MutableList<HtmlElement> = mutableListOf()) {
     constructor(vararg elements: HtmlElement) : this(mutableListOf()) {
         for (s in elements) {
@@ -71,7 +70,7 @@ class Page(val elements: MutableList<HtmlElement> = mutableListOf()) {
 
 sealed class HtmlElement
 
-class Container(val elements: MutableList<HtmlElement> = mutableListOf()) : HtmlElement(){
+class Container(val elements: MutableList<HtmlElement> = mutableListOf()) : HtmlElement() {
 
     constructor(vararg units: HtmlElement) : this(mutableListOf()) {
         for (u in units) {
@@ -81,13 +80,13 @@ class Container(val elements: MutableList<HtmlElement> = mutableListOf()) : Html
 }
 
 class Image : HtmlElement() {
-    val src : String
-        get()= "http://some.image"
+    val src: String
+        get() = "http://some.image"
 }
 
 class Link : HtmlElement() {
-    val href : String
-        get()= "http://some.link"
+    val href: String
+        get() = "http://some.link"
 }
 
 class Table : HtmlElement()

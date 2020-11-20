@@ -1,10 +1,9 @@
 package chapter4.chainOfResponsibility
 
 
-
 typealias Handler = (request: Request) -> Response
 
-fun main(args: Array<String>) {
+fun main() {
 
     val req = Request("developer@company.com", "Why do we need Software Architects?")
 
@@ -26,12 +25,12 @@ val basicValidation = fun(next: Handler): Handler {
 }
 
 val authentication = fun(next: Handler) =
-    fun(request: Request): Response {
-        if (!request.email.isKnownEmail()) {
-            throw IllegalArgumentException()
+        fun(request: Request): Response {
+            if (!request.email.isKnownEmail()) {
+                throw IllegalArgumentException()
+            }
+            return next(request)
         }
-        return next(request)
-    }
 
 val finalResponse = fun() = fun(_: Request) = Response("Try git-blame.")
 

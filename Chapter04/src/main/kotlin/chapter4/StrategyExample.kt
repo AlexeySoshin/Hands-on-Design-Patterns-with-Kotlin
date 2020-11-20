@@ -1,7 +1,7 @@
 package chapter4
 
 
-fun main(args: Array<String>) {
+fun main() {
     val h = OurHero()
     h.shoot()
     h.currentWeapon = Weapons.banana

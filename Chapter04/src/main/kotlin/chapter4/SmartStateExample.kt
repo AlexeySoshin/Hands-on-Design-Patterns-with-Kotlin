@@ -1,7 +1,7 @@
 package chapter4.smart
 
 
-fun main(args: Array<String>) {
+fun main() {
     val s = Snail()
 
     val still = Still(s)

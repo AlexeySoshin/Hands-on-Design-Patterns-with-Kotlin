@@ -1,13 +1,13 @@
 package chapter4.chainOfResponsibility.java
 
 
-fun main(args: Array<String>) {
+fun main() {
     val req = Request("developer@company.com",
             "Why do we need Software Architects?")
 
     val chain = AuthenticationHandler(
-                    BasicValidationHandler(
-                        FinalResponseHandler()))
+            BasicValidationHandler(
+                    FinalResponseHandler()))
 
     val res = chain.handle(req)
 

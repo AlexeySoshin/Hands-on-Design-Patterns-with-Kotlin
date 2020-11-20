@@ -1,7 +1,7 @@
 package chapter4
 
 
-fun main(args: Array<String>) {
+fun main() {
 
 }
 
@@ -10,7 +10,7 @@ class Snail : WhatCanHappen {
     private var healthPoints = 10
 
     override fun seeHero() {
-        mood = when(mood) {
+        mood = when (mood) {
             is Still -> Aggressive()
             is Aggressive -> mood
             is Retreating -> mood
@@ -29,7 +29,7 @@ class Snail : WhatCanHappen {
     }
 
     override fun timePassed() {
-        mood = when(mood) {
+        mood = when (mood) {
             is Retreating -> Aggressive()
             else -> mood
         }

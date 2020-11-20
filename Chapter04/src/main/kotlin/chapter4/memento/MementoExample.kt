@@ -1,7 +1,7 @@
 package chapter4.memento
 
 
-fun main(args: Array<String>) {
+fun main() {
     val michael = Manager()
 
     val captured = michael.Thought().captureThought()

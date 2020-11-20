@@ -87,11 +87,9 @@ class MyMind {
     fun taskCompleted(isMajorRelease: Boolean) {
         if (!Kenny.isEating() && !Kenny.isSleeping()) {
             println(Kenny.doesMyCodeWork())
-        }
-        else if (!Brad.isEating() && !Brad.isSleeping()) {
+        } else if (!Brad.isEating() && !Brad.isSleeping()) {
             println(Brad.doesMyCodeWork())
-        }
-        else if (!George.isWatchingFootball()) {
+        } else if (!George.isWatchingFootball()) {
             println(George.doesMyCodeWork())
         }
 

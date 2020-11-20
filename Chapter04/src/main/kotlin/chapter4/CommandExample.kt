@@ -1,16 +1,16 @@
 package chapter4
 
 
-fun main(args: Array<String>) {
+fun main() {
 
     val s = Soldier()
     s.appendMove(20, 0)
-        .appendMove(20, 20)
-        .appendMove(5, 20)
-        .execute()
+            .appendMove(20, 20)
+            .appendMove(5, 20)
+            .execute()
 }
 
-val moveGenerator = fun (s: Soldier,
+val moveGenerator = fun(s: Soldier,
                         x: Int,
                         y: Int): Command {
     return fun() {
@@ -42,4 +42,4 @@ class Soldier {
     }
 }
 
-typealias Command = ()->Unit
+typealias Command = () -> Unit

@@ -1,10 +1,7 @@
 package chapter4.observer
 
 
-
-fun main(args: Array<String>) {
-
-
+fun main() {
     val catTheConductor = Cat()
 
     val bat = Bat()
@@ -25,11 +22,12 @@ fun main(args: Array<String>) {
 
 typealias Times = Int
 
-enum class SoundPitch {HIGH, LOW}
+enum class SoundPitch { HIGH, LOW }
 interface Message {
     val repeat: Times
     val pitch: SoundPitch
 }
+
 data class LowMessage(override val repeat: Times) : Message {
     override val pitch = SoundPitch.LOW
 }
@@ -37,14 +35,15 @@ data class LowMessage(override val repeat: Times) : Message {
 data class HighMessage(override val repeat: Times) : Message {
     override val pitch = SoundPitch.HIGH
 }
-class Cat {
-    private val participants = mutableMapOf<(Message)->Unit, (Message)->Unit>()
 
-    fun joinChoir(whatToCall: (Message)->Unit) {
+class Cat {
+    private val participants = mutableMapOf<(Message) -> Unit, (Message) -> Unit>()
+
+    fun joinChoir(whatToCall: (Message) -> Unit) {
         participants.put(whatToCall, whatToCall)
     }
 
-    fun leaveChoir(whatNotToCall: (Message)->Unit) {
+    fun leaveChoir(whatNotToCall: (Message) -> Unit) {
         participants.remove(whatNotToCall)
     }
 

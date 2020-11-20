@@ -1,7 +1,7 @@
 package chapter4
 
 
-fun main(args: Array<String>) {
+fun main() {
 
     val rangers = Squad("Josh", "Ewan", "Tom")
     val deltaForce = Squad("Sam", "Eric", "William")
@@ -26,30 +26,30 @@ class Squad(private val infantryUnits: MutableList<InfantryUnit> = mutableListOf
         infantryUnits.add(object : InfantryUnit {})
     }
 
-    operator fun iterator() = object: Iterator<InfantryUnit> {
+    operator fun iterator() = object : Iterator<InfantryUnit> {
         var i = 0
         override fun hasNext(): Boolean {
             return i < infantryUnits.size + 1
         }
 
         override fun next() =
-            when (i) {
-                0 -> commander
-                else -> infantryUnits[i - 1]
-            }.also { i++ }
+                when (i) {
+                    0 -> commander
+                    else -> infantryUnits[i - 1]
+                }.also { i++ }
     }
 
-    fun reverseIterator() = object: Iterator<InfantryUnit> {
+    fun reverseIterator() = object : Iterator<InfantryUnit> {
         var i = 0
         override fun hasNext(): Boolean {
             return i < infantryUnits.size + 1
         }
 
         override fun next() =
-            when (i) {
-                infantryUnits.size -> commander
-                else -> infantryUnits[infantryUnits.size - i - 1]
-            }.also { i++ }
+                when (i) {
+                    infantryUnits.size -> commander
+                    else -> infantryUnits[infantryUnits.size - i - 1]
+                }.also { i++ }
     }
 }
 
@@ -58,7 +58,7 @@ class Platoon(val squads: MutableList<Squad> = mutableListOf()) {
 
     constructor(squads: Squad, deltaForce: Squad) : this()
 
-    operator fun iterator() = object: Iterator<InfantryUnit> {
+    operator fun iterator() = object : Iterator<InfantryUnit> {
         var i = 0
 
         override fun hasNext(): Boolean {
@@ -73,6 +73,6 @@ class Platoon(val squads: MutableList<Squad> = mutableListOf()) {
 
 interface InfantryUnit
 
-class Sergeant: InfantryUnit
+class Sergeant : InfantryUnit
 
-class Lieutenant: InfantryUnit
+class Lieutenant : InfantryUnit

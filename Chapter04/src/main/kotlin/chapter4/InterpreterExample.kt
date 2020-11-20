@@ -1,16 +1,16 @@
 package chapter4
 
-fun main(args: Array<String>) {
+fun main() {
     val sql = select("name, age") {
-                            from("users") {
-                            where("age > 25")
-                        }
-                     }
+        from("users") {
+            where("age > 25")
+        }
+    }
 
     println(sql) // "SELECT name, age FROM users WHERE age > 25"
 }
 
-fun select(columns: String, from: SelectClause.()->Unit): SelectClause {
+fun select(columns: String, from: SelectClause.() -> Unit): SelectClause {
     from(SelectClause(columns))
     return SelectClause(columns).apply(from)
 }
@@ -18,8 +18,8 @@ fun select(columns: String, from: SelectClause.()->Unit): SelectClause {
 
 class SelectClause(private val columns: String) {
 
-    private lateinit var from : FromClause
-    fun from(table: String, where: FromClause.()->Unit): FromClause {
+    private lateinit var from: FromClause
+    fun from(table: String, where: FromClause.() -> Unit): FromClause {
         this.from = FromClause(table)
 
         return this.from.apply(where)

@@ -6,7 +6,7 @@ class OurHero {
     private var x: Int = 42
     private var y: Int = 173
 
-    private var currentWeapon : Weapon = Peashooter()
+    private var currentWeapon: Weapon = Peashooter()
 
     fun shoot(): Projectile = currentWeapon.shoot(x, y, direction)
 
@@ -42,7 +42,7 @@ class Peashooter : Weapon {
 class Pomegranate : Weapon {
     override fun shoot(x: Int,
                        y: Int,
-                       direction: Direction)  = object : Projectile(x, y, direction) {
+                       direction: Direction) = object : Projectile(x, y, direction) {
         // Explode when you hit first enemy
     }
 }
@@ -50,7 +50,7 @@ class Pomegranate : Weapon {
 class Banana : Weapon {
     override fun shoot(x: Int,
                        y: Int,
-                       direction: Direction)  = object : Projectile(x, y, direction) {
+                       direction: Direction) = object : Projectile(x, y, direction) {
         // Return when you hit screen border
     }
 }

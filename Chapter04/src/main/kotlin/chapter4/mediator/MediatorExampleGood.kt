@@ -9,15 +9,14 @@ interface Manager {
     fun isAllGood(majorRelease: Boolean): Boolean
 }
 
-object Michael: Canary, Manager {
+object Michael : Canary, Manager {
     val kenny = Kenny(this)
     val brad = Brad(this)
 
     override fun isAllGood(majorRelease: Boolean): Boolean {
         if (!kenny.isEating() && !kenny.isSleeping()) {
             println(kenny.doesMyCodeWork())
-        }
-        else if (!brad.isEating() && !brad.isSleeping()) {
+        } else if (!brad.isEating() && !brad.isSleeping()) {
             println(brad.doesMyCodeWork())
         }
         return true
