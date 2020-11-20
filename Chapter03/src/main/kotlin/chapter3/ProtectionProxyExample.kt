@@ -1,7 +1,7 @@
 package chapter3
 
 fun main() {
-
+    val alex = Employee(10_000)
 }
 
 
@@ -13,12 +13,9 @@ interface HasSalary {
     val salary: Int
 }
 
-/*data class Employee(override var salary: Int): CanAskForSalaryIncrease by ProtectionProxy(){
+data class Employee(override var salary: Int): CanAskForSalaryIncrease by ProtectionProxy(salary)
 
-}*/
-/*
-
-class ProtectionProxy : CanAskForSalaryIncrease {
+class ProtectionProxy(override val salary: Int) : CanAskForSalaryIncrease {
     override fun askForIncrease(percent: Int) {
         if (percent <= 0) {
             throw RuntimeException("Zero or negative percent")
@@ -28,4 +25,4 @@ class ProtectionProxy : CanAskForSalaryIncrease {
         }
         salary
     }
-}*/
+}
