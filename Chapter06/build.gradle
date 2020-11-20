@@ -22,7 +22,6 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.2.20'
 }
 
 compileKotlin {
