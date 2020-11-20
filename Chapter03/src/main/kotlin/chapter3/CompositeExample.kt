@@ -1,6 +1,6 @@
 package chapter3
 
-fun main(args: Array<String>) {
+fun main() {
 
     val miller = Rifleman()
     val caparzo = Rifleman()

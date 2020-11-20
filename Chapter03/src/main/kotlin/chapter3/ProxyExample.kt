@@ -3,7 +3,7 @@ package chapter3
 import java.io.BufferedOutputStream
 import java.io.File
 
-fun main(args: Array<String>) {
+fun main() {
 
 
     val catImage34 = CatImage("https://funny.cats/thumb-34.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg")

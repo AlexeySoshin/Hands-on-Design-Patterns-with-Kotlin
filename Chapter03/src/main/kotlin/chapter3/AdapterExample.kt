@@ -4,7 +4,7 @@ import java.util.stream.Stream
 import kotlin.streams.toList
 
 
-fun main(args : Array<String>) {
+fun main() {
 
     cellPhone(charger(powerOutlet().toEUPlug()).toUsbTypeC())
 

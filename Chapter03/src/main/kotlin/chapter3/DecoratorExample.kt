@@ -1,7 +1,7 @@
 package chapter3
 
 
-fun main(args : Array<String>) {
+fun main() {
     val sadHappy = SadMap(HappyMap<String, String>())
     sadHappy["one"] = "one"
     sadHappy["two"] = "two"

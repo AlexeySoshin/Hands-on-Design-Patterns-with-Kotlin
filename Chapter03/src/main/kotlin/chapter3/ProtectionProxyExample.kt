@@ -1,8 +1,6 @@
 package chapter3
 
-import com.sun.javaws.exceptions.InvalidArgumentException
-
-fun main(args: Array<String>) {
+fun main() {
 
 }
 

@@ -1,6 +1,6 @@
 package chapter3
 
-fun main(args : Array<String>) {
+fun main() {
 
     val a = listOf("a")
     val b = listOf("b")
