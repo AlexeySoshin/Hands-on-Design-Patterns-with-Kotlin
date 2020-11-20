@@ -1,6 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
+fun main() {
 
     val seq = generateSequence(1) { it + 1 }
 
@@ -20,19 +20,17 @@ fun main(args: Array<String>) {
         if (it % 3 == 0) {
             print("Fiz")
             true
-        }
-        else {
+        } else {
             false
         }
     }.filter {
         if (it % 5 == 0) {
             println("Baz")
             true
-        }
-        else {
+        } else {
             false
         }
-    }.onEach{ println(it) }.toList()
+    }.onEach { println(it) }.toList()
 
 
 }

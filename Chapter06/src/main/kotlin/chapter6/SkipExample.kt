@@ -1,6 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
+fun main() {
 
     val numbers = (1..5).toList()
     println(numbers.drop(2))

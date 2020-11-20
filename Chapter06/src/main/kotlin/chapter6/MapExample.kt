@@ -1,7 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
-
+fun main() {
     val letters = listOf("a", "b", "c", "d")
 
     println(repeatAll(letters)) // [aa, bb, cc, dd]
@@ -14,9 +13,6 @@ fun main(args: Array<String>) {
     println(repeatSomething(letters) {
         it.toUpperCase()
     })
-
-
-
 }
 
 fun repeatAll(letters: List<String>): MutableList<String> {

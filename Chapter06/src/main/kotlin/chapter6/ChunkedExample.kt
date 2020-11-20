@@ -1,6 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
+fun main() {
 
     val hugeList = (1..57_721).toList()
 
@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 
     for (i in 0..pages) {
         val from = i * pageSize
-        val p = (i+1) * pageSize
+        val p = (i + 1) * pageSize
         val to = minOf(p, hugeList.size)
         dbCall(hugeList.slice(from until to))
     }

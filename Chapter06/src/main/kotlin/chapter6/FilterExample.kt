@@ -1,9 +1,7 @@
 package chapter6
 
-import com.sun.org.apache.xpath.internal.operations.Bool
 
-
-fun main(args: Array<String>) {
+fun main() {
 
     println(filterOdd((1..10).toList()))
 
@@ -31,7 +29,7 @@ fun filterOdd(numbers: List<Int>): MutableList<Int> {
     return result
 }
 
-fun filter(numbers: List<Int>, check: (Int)->Boolean): MutableList<Int> {
+fun filter(numbers: List<Int>, check: (Int) -> Boolean): MutableList<Int> {
     val result = mutableListOf<Int>()
 
     for (n in numbers) {

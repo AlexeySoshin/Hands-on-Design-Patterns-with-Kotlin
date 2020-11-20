@@ -1,8 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
-
-
+fun main() {
     val employeeIds = listOf(5, 8, 13, 21, 34, 55, 89)
     val daysInCompany = listOf(176, 145, 117, 92, 70, 51, 35, 22, 12, 5)
 

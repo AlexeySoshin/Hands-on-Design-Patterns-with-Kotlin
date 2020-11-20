@@ -1,6 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
+fun main() {
     val numbers = (1..10).toList()
 
     println(numbers.toList())
@@ -8,5 +8,4 @@ fun main(args: Array<String>) {
     println(numbers.slice((0..3)))
 
     println(numbers.subList(0, 3))
-
 }

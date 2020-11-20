@@ -1,9 +1,8 @@
 package chapter6
 
-import kotlin.streams.toList
 import kotlin.system.measureTimeMillis
 
-fun main(args: Array<String>) {
+fun main() {
 
     val numbers = (1..1_000_000).toList()
 
@@ -19,6 +18,4 @@ fun main(args: Array<String>) {
             it * it
         }
     })
-
-
 }

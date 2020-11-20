@@ -1,8 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
-
-
+fun main() {
     val people = listOf(Person("Jane", "Doe", 19),
             Person("John", "Doe", 22),
             Person("John", "Smith", 23))

@@ -1,6 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
+fun main() {
     withMap()
     withMapTo()
 }

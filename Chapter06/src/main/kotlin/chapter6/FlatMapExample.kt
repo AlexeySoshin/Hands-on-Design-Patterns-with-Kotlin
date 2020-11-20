@@ -1,7 +1,6 @@
 package chapter6
 
-fun main(args: Array<String>) {
-
+fun main() {
     val listOfLists = listOf(listOf(1, 2),
             listOf(3, 4, 5), listOf(6, 7, 8))
 
@@ -17,8 +16,8 @@ fun main(args: Array<String>) {
 
     println(listOfLists.flatten())
 
-    println(listOfLists.flatMap {
-        it.map { it.toDouble() }
+    println(listOfLists.flatMap { list ->
+        list.map { it.toDouble() }
     })
 
     val setOfListsOfSets = setOf(
@@ -33,6 +32,4 @@ fun main(args: Array<String>) {
     println(setOfListsOfSets.flatten().flatten())
 
     //println(setOfListsOfSets.flatten().flatten().flatten())
-
-
 }
