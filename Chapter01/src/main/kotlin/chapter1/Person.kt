@@ -1,6 +1,6 @@
 package chapter1
 
-fun main(args: Array<String>) {
+fun main() {
     println("Hello, world!")
 
     val p = Person()

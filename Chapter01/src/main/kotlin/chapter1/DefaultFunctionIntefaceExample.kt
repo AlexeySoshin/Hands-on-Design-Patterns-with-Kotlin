@@ -26,7 +26,7 @@ class EvilDungeonMaster(private val awfulGame: String) : DungeonMaster(awfulGame
     }
 }
 
-fun main(args : Array<String>) {
+fun main() {
     val p = EvilDungeonMaster("Beholder Strikes Back")
     p.sayHello()
     p.startGame()

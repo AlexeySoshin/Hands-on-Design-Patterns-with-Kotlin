@@ -1,8 +1,7 @@
 package me.soshin
 
 
-fun main(args : Array<String>) {
-
+fun main() {
     val word = "Word"
 
     for (c in word.reversed()) {
