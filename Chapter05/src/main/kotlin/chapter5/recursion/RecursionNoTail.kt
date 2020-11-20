@@ -14,8 +14,8 @@ fun sumRec(i: Int, numbers: List<Int>): Long {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
 
-    val numbers = List(1_000_000) {it}
-    println(sumRec(0,  numbers))
+    val numbers = List(1_000_000) { it }
+    println(sumRec(0, numbers))
 }

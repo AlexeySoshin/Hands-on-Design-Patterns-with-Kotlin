@@ -13,7 +13,7 @@ class Summarizer {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val l1 = listOf(1, 2, 3)
     val l2 = listOf(1, 2, 3)
     val l3 = listOf(1, 2, 3, 4)

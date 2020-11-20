@@ -1,7 +1,7 @@
 package chapter5.immutability
 
 
-fun main(args: Array<String>) {
+fun main() {
     fun <T> printAndClear(list: MutableList<T>) {
         for (e in list) {
             println(e)

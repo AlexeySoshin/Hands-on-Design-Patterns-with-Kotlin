@@ -9,9 +9,9 @@ tailrec fun sumRec(i: Int, sum: Long, numbers: List<Int>): Long {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
 
-    val numbers = List(1_000_000) {it}
+    val numbers = List(1_000_000) { it }
 
     println(sumRec(0, 0, numbers))
 }

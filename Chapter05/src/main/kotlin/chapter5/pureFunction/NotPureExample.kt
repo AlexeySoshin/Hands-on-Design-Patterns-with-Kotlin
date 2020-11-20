@@ -1,7 +1,6 @@
 package chapter5.pureFunction
 
 
-
 fun sayHello() {
     println("Hello")
 }
@@ -13,11 +12,10 @@ fun testHello(): Boolean {
 }
 
 fun <T> withoutFirst(list: List<T>): T {
-
     return ArrayList(list).removeAt(0)
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val list = mutableListOf(1, 2, 3)
 
     println(withoutFirst(list))

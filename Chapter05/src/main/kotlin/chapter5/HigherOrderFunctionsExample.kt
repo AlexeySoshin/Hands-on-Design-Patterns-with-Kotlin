@@ -1,10 +1,7 @@
 package chapter5
 
 
-
-fun main(args : Array<String>) {
-
-
+fun main() {
     val multiplyFunction = generateMultiply()
     println(multiplyFunction(3, 4))
 
@@ -15,7 +12,7 @@ fun main(args : Array<String>) {
     }
 
     val squareAnonymous = fun(x: Int) = x * x
-    val squareLambda = {x: Int -> x * x}
+    val squareLambda = { x: Int -> x * x }
 }
 
 fun mathInvoker(x: Int, y: Int, mathFunction: (Int, Int) -> Int) {
@@ -24,5 +21,5 @@ fun mathInvoker(x: Int, y: Int, mathFunction: (Int, Int) -> Int) {
 
 
 fun generateMultiply(): (Int, Int) -> Int {
-    return { x: Int, y: Int -> x * y}
+    return { x: Int, y: Int -> x * y }
 }

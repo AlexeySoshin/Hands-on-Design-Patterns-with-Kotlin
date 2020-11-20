@@ -4,11 +4,11 @@ import java.util.*
 import kotlin.concurrent.thread
 
 
-fun main(args: Array<String>) {
+fun main() {
     val counter = ScoreCollector()
 
-    thread(isDaemon = true, name="Maleficent") {
-        while(true) counter.scores.clear()
+    thread(isDaemon = true, name = "Maleficent") {
+        while (true) counter.scores.clear()
     }
 
     for (i in 1..1_000) {

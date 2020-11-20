@@ -4,13 +4,12 @@ import java.util.*
 import kotlin.concurrent.thread
 
 
-fun main(args: Array<String>) {
-
+fun main() {
     val counter = ImmutableScoreCollector(List(1_000) {
         Random().nextInt(100)
     })
 
-    thread(isDaemon = true, name="Maleficent") {
+    thread(isDaemon = true, name = "Maleficent") {
         //while(true) counter.scores.clear()
     }
 }
