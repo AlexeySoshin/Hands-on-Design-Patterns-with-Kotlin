@@ -6,8 +6,7 @@ data class PC(val motherboard: String = "Terasus XZ27",
               val graphicCard: String = "nKFC 8100TZ")
 
 
-fun main(args: Array<String>) {
-
+fun main() {
     val pcFromWarehouse = PC() // Our boring PC
 
     val pwnerPC = pcFromWarehouse.copy(graphicCard = "nKFC 8999ZTXX",

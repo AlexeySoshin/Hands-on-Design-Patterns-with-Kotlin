@@ -12,8 +12,6 @@ data class Mail(val to: String,
     }
 }
 
-fun main(args: Array<String>) {
-
-
+fun main() {
     val mail = Mail("hello").message("How are you?")
 }

@@ -12,11 +12,8 @@ object CounterSingleton {
     fun increment() = counter.incrementAndGet()
 }
 
-fun main(args : Array<String>) {
-
+fun main() {
     for (i in 1..10) {
         println(CounterSingleton.increment())
     }
-
-
 }

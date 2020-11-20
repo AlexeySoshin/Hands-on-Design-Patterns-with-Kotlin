@@ -1,6 +1,6 @@
 package chapter2
 
-fun main(args : Array<String>) {
+fun main() {
 
     val n = NumberMaster()
     println(NumberMaster.valueOf("123"))

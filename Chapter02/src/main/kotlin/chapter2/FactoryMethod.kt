@@ -1,7 +1,6 @@
 package chapter2
 
-fun main(args: Array<String>) {
-
+fun main() {
     val animalTypes = listOf("dog" to "bulldog",
             "dog" to "beagle",
             "cat" to "persian",
@@ -35,7 +34,6 @@ class CatFactory {
     fun createCat(animalBreed: String, i: Int): Animal {
         return Cat(i)
     }
-
 }
 
 class DogFactory {

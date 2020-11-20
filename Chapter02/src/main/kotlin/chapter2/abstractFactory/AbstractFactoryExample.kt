@@ -1,6 +1,6 @@
 package chapter2.abstractFactory
 
-fun main(args : Array<String>) {
+fun main() {
 
     val hq = CatHQ()
     val barracks1 = hq.buildBarracks()
