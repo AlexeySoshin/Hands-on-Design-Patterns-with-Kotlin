@@ -1,16 +1,9 @@
 package chapter7
 
 import io.reactivex.*
-import io.reactivex.Observable
 import io.reactivex.functions.BiFunction
-import io.reactivex.functions.Consumer
-import io.reactivex.processors.PublishProcessor
 import io.reactivex.schedulers.Schedulers
 import java.util.*
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
-import java.util.stream.IntStream
-import io.reactivex.subjects.PublishSubject
 import org.reactivestreams.Subscriber
 import org.reactivestreams.Subscription
 import java.util.concurrent.Callable
@@ -18,9 +11,7 @@ import java.util.concurrent.CountDownLatch
 import java.util.concurrent.atomic.AtomicInteger
 
 
-fun main(args: Array<String>) {
-
-
+fun main() {
     //lambda()
     //obj()
     generate()
@@ -50,8 +41,8 @@ fun generateFunctional() {
             }
     )
 
-    source.observeOn(Schedulers.newThread()).subscribe(object: Subscriber<String> {
-        lateinit var subscription : Subscription
+    source.observeOn(Schedulers.newThread()).subscribe(object : Subscriber<String> {
+        lateinit var subscription: Subscription
 
         override fun onNext(t: String) {
             t.repeat(500)
@@ -77,6 +68,7 @@ fun generateFunctional() {
 }
 
 data class State(val count: Int, val startTime: Long)
+
 private fun generate() {
 
     val latch = CountDownLatch(1)
@@ -96,8 +88,8 @@ private fun generate() {
         }
     }
 
-    source.observeOn(Schedulers.newThread()).subscribe(object: Subscriber<String> {
-        lateinit var subscription : Subscription
+    source.observeOn(Schedulers.newThread()).subscribe(object : Subscriber<String> {
+        lateinit var subscription: Subscription
 
         override fun onNext(t: String) {
             t.repeat(500)
@@ -124,7 +116,7 @@ private fun generate() {
 
 private fun obj() {
     val latch = CountDownLatch(1)
-    val source = Flowable.create<String> ({
+    val source = Flowable.create<String>({
         var startProducing = System.currentTimeMillis()
         for (i in 1..10_000_000) {
             it.onNext(UUID.randomUUID().toString())
@@ -141,40 +133,40 @@ private fun obj() {
 
     source.observeOn(Schedulers.newThread())
             .subscribe(object : Subscriber<String> {
-        lateinit var subscription : Subscription
-        val counter = AtomicInteger(0)
+                lateinit var subscription: Subscription
+                val counter = AtomicInteger(0)
 
-        override fun onSubscribe(s: Subscription) {
-            this.subscription = s
-            this.subscription.request(100)
-        }
+                override fun onSubscribe(s: Subscription) {
+                    this.subscription = s
+                    this.subscription.request(100)
+                }
 
-        override fun onNext(t: String) {
-            t.repeat(500)
+                override fun onNext(t: String) {
+                    t.repeat(500)
 
-            println(counter.get())
-            this.subscription.request(1)
+                    println(counter.get())
+                    this.subscription.request(1)
 
-            if (counter.incrementAndGet() % 100_000 == 0) {
-                println("Consumed ${counter.get()} events")
-            }
-        }
+                    if (counter.incrementAndGet() % 100_000 == 0) {
+                        println("Consumed ${counter.get()} events")
+                    }
+                }
 
-        override fun onError(t: Throwable) {
-            t.printStackTrace()
-        }
+                override fun onError(t: Throwable) {
+                    t.printStackTrace()
+                }
 
-        override fun onComplete() {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-    })
+                override fun onComplete() {
+                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                }
+            })
 
     latch.await()
 }
 
 private fun lambda() {
     val latch = CountDownLatch(1)
-    val source = Flowable.create<String> ({
+    val source = Flowable.create<String>({
         var startProducing = System.currentTimeMillis()
         for (i in 1..10_000_000) {
             it.onNext(UUID.randomUUID().toString())
@@ -191,12 +183,12 @@ private fun lambda() {
 
     val counter = AtomicInteger(0)
     source.observeOn(Schedulers.newThread())
-            .subscribe( {
+            .subscribe({
                 it.repeat(500)
                 if (counter.incrementAndGet() % 100_000 == 0) {
                     println("Consumed ${counter.get()} events")
                 }
-            } , {
+            }, {
                 println(it)
             }, {
                 println("Done consuming")

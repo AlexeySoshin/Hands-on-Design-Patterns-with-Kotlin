@@ -3,7 +3,7 @@ package chapter7
 import io.reactivex.Observable
 import java.util.concurrent.TimeUnit
 
-fun main(args: Array<String>) {
+fun main() {
 
     val publisher = Observable.interval(1, TimeUnit.SECONDS)
 

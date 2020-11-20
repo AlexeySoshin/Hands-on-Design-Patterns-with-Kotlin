@@ -1,15 +1,9 @@
 package chapter7
 
 import io.reactivex.Observable
-import io.reactivex.ObservableEmitter
-import io.reactivex.ObservableOnSubscribe
 import io.reactivex.schedulers.Schedulers
-import io.reactivex.subjects.Subject
 
-fun main(args: Array<String>) {
-
-
-
+fun main() {
     val iterator = (1..15).iterator()
 
     val publisher = Observable.create<Int> {

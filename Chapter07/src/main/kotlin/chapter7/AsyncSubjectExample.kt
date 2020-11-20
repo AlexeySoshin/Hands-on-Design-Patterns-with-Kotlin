@@ -2,21 +2,18 @@ package chapter7
 
 import io.reactivex.Observable
 import io.reactivex.subjects.AsyncSubject
-import io.reactivex.subjects.BehaviorSubject
-import io.reactivex.subjects.PublishSubject
-import io.reactivex.subjects.ReplaySubject
-import java.util.concurrent.TimeUnit
+
+//import java.util.concurrent.TimeUnit
 
 
-fun main(args: Array<String>) {
-
+fun main() {
     replay()
 }
 
 private fun replay() {
     val list = (8..23).toList() // Some non trivial numbers
     val iterator = list.iterator()
-    /*val o = Observable.intervalRange(0, list.size.toLong(), 0, 10, TimeUnit.MILLISECONDS).map {
+/*    val o = Observable.intervalRange(0, list.size.toLong(), 0, 10, TimeUnit.MILLISECONDS).map {
         iterator.next()
     }.publish()*/
 

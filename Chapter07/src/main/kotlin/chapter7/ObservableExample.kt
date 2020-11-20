@@ -2,7 +2,7 @@ package chapter7
 
 import io.reactivex.Observable
 
-fun main(args: Array<String>) {
+fun main() {
 
     val publisher = Observable.create<Int> {
         for (i in 1..10_000) {

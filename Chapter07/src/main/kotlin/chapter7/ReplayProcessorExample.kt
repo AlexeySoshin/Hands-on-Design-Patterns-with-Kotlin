@@ -3,12 +3,10 @@ package chapter7
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Observable
 import io.reactivex.processors.ReplayProcessor
-import io.reactivex.subjects.PublishSubject
-import io.reactivex.subjects.ReplaySubject
 import java.util.concurrent.TimeUnit
 
 
-fun main(args: Array<String>) {
+fun main() {
 
     replay()
 }
