@@ -1,5 +1,8 @@
 package chapter2.abstractFactory
 
+import chapter2.abstractFactory.InfantryUnits.*
+import chapter2.abstractFactory.VehicleUnits.*
+
 fun main() {
 
     val hq = CatHQ()
@@ -8,13 +11,15 @@ fun main() {
     val vehicleFactory1 = hq.buildVehicleFactory()
 
     val units = listOf(
-            barracks1.build(InfantryUnits.RIFLEMEN),
-            barracks2.build(InfantryUnits.ROCKET_SOLDIER),
-            barracks2.build(InfantryUnits.ROCKET_SOLDIER),
-            vehicleFactory1.build(VehicleUnits.TANK),
-            vehicleFactory1.build(VehicleUnits.APC),
-            vehicleFactory1.build(VehicleUnits.APC)
+            barracks1.build(RIFLEMEN),
+            barracks2.build(ROCKET_SOLDIER),
+            barracks2.build(ROCKET_SOLDIER),
+            vehicleFactory1.build(TANK),
+            vehicleFactory1.build(APC),
+            vehicleFactory1.build(APC)
     )
+
+    println(units)
 }
 
 interface Types
@@ -47,8 +52,8 @@ class CatHQ : HQ {
         val b = object : Building<InfantryUnits, Infantry> {
             override fun build(type: InfantryUnits): Infantry {
                 return when (type) {
-                    InfantryUnits.RIFLEMEN -> Rifleman()
-                    InfantryUnits.ROCKET_SOLDIER -> RockerSoldier()
+                    RIFLEMEN -> Rifleman()
+                    ROCKET_SOLDIER -> RockerSoldier()
                 }
             }
         }
@@ -59,8 +64,8 @@ class CatHQ : HQ {
     override fun buildVehicleFactory(): Building<VehicleUnits, Vehicle> {
         val vf = object : Building<VehicleUnits, Vehicle> {
             override fun build(type: VehicleUnits) = when (type) {
-                VehicleUnits.APC -> APC()
-                VehicleUnits.TANK -> Tank()
+                APC -> APC()
+                TANK -> Tank()
             }
         }
         buildings.add(vf)
